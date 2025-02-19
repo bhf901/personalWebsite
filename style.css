@@ -1,0 +1,40 @@
+* {
+    font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(244, 246, 254);
+}
+
+#header {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+#header-links {
+    margin: 0 15px 0 auto;
+}
+
+.header-link {
+    margin: 0 5px;
+    text-decoration: none;
+    padding: 2px;
+    color: black;
+}
+
+#main-header {
+    font-size: 70pt;
+    text-align: center;
+    margin: 20px 0 5px 0;
+}
+
+#main-subheader {
+    margin: 0;
+    text-align: center;
+}
