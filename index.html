@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000" rel="stylesheet">
-        <!-- REFERENCE: DM Sans and Source Code Pro are imported. -->
+        <!-- REFERENCE: DM Sans is imported. -->
         <title>Ben Fink</title>
     </head>
     <body>
@@ -17,14 +17,27 @@
             <!-- logo here -->
             <p id="current-time"></p>
             <div id="header-links">
-                <a href="#about" class="header-link">About</a>
-                <a href="#projects" class="header-link">My Projects</a>
-                <a href="#contact" class="header-link">Contact Me</a>
+                <div class="header-link-container">
+                    <a href="#about" class="header-link" id="header-link-1">About</a>
+                    <div id="header-link-underline-1" class="header-link-underline"></div>
+                </div>
+                <div class="header-link-container">
+                    <a href="#projects" class="header-link" id="header-link-2">My Projects</a>
+                    <div id="header-link-underline-2" class="header-link-underline"></div>
+                </div>
+                <div class="header-link-container">
+                    <a href="#contact" class="header-link" id="header-link-3">Contact Me</a>
+                    <div id="header-link-underline-3" class="header-link-underline"></div>
+                </div>
             </div>
         </div>
         <div id="main-content">
-            <h1 id="main-header">Ben Fink</h1>
-            <p id="main-subheader">Software Developer. Entrepreneur. Student.</p>
+            <div id="main-heading-container">
+                <h1 id="main-heading"></h1>
+                <div id="imitation-cursor"></div>
+            </div>
+            <p id="main-subheading">Software Developer. Entrepreneur. Student.</p>
+            <button id="enter-button">Continue<img id="enter-arrow" src="arrow-icon.png" width="30" height="30" alt="Right-facing arrow."></button>
         </div>
         <script src="app.js"></script>
     </body>

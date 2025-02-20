@@ -18,6 +18,8 @@ body {
 }
 
 #header-links {
+    display: flex;
+    align-items: center;
     margin: 0 15px 0 auto;
 }
 
@@ -28,13 +30,73 @@ body {
     color: black;
 }
 
-#main-header {
+#main-heading {
     font-size: 70pt;
     text-align: center;
     margin: 20px 0 5px 0;
 }
 
-#main-subheader {
+#main-subheading {
     margin: 0;
     text-align: center;
+    color: rgba(0, 0, 0, 0);
+    transition: color 1s ease;
+}
+
+#main-heading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#imitation-cursor {
+    width: 5px;
+    height: 90px;
+    background-color: black;
+    margin: 0 0 0 5px;
+    border-radius: 10px;
+    transition: height 0.3s ease, width 0.3s ease;
+}
+
+.header-link-container {
+    display: block;
+    text-align: center;
+}
+
+.header-link-underline {
+    width: 0%;
+    position: relative;
+    left: 5%;
+    right: 5%;
+    height: 2.5px;
+    background-color: black;
+    border-radius: 10px;
+    margin: 1px 0 0 0;
+    transition: width 0.3s ease;
+}
+
+.header-link-container:hover .header-link-underline {
+    width: 90%;
+}
+
+#enter-button {
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 20pt;
+    cursor: pointer;
+    justify-content: center;
+    margin: 25px auto;
+}
+
+#enter-arrow {
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+#enter-button:hover #enter-arrow {
+    transform: rotate(90deg);
 }
