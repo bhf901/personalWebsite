@@ -25,7 +25,7 @@ setInterval(runTime, 1);
 let letterIndex = 0;
 let letterAddInterval
 
-function typeOutHeader() {
+function typeOutHeading() {
     const heading = document.getElementById('main-heading');
     const subheading = document.getElementById('main-subheading');
     const cursor = document.getElementById('imitation-cursor');
@@ -40,10 +40,12 @@ function typeOutHeader() {
         letterAddInterval = undefined;
         cursor.style.height = '0';
         cursor.style.width = '0';
+        document.getElementById('enter-button').style.opacity = '1';
+        document.getElementById('header').style.opacity = '1';
         subheading.style.color = 'black';
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    letterAddInterval = setInterval(typeOutHeader, 100);
+    letterAddInterval = setInterval(typeOutHeading, 100);
 })
