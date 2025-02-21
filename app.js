@@ -48,4 +48,54 @@ function typeOutHeading() {
 
 document.addEventListener('DOMContentLoaded', () => {
     letterAddInterval = setInterval(typeOutHeading, 100);
-})
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('a');
+    links.forEach((link) => {
+        link.addEventListener('click', (e) => {
+            if (!link.href.includes(window.location.hostname) && !link.href.includes('mailto')) {
+                e.preventDefault();
+                linkSecurity(link.href);
+            }
+        });
+    });
+});
+
+let focusedLink;
+
+function linkSecurity(link) {
+    focusedLink = link;
+    let security;
+    let url;
+    let domain;
+    let sublinks;
+    const status = document.getElementById('link-security-status');
+    [security, url] = link.split('://');
+    [domain, sublinks] = url.split('/');
+    document.getElementById('link-in-text').textContent = domain;
+    document.getElementById('full-link').textContent = link;
+    document.getElementById('link-security-container').style.display = 'block';
+    if (security === 'https') {
+        status.style.color = 'rgb(59, 166, 59)';
+        status.textContent = 'Secure';
+    } else {
+        status.style.color = 'rgb(166, 59, 59)';
+        status.textContent = 'Not Secure';
+    }
+}
+
+function openFocusedLink() {
+    window.open(focusedLink);
+    closeLinkSecurity();
+}
+
+function closeLinkSecurity() {
+    focusedLink = undefined;
+    const status = document.getElementById('link-security-status');
+    document.getElementById('link-security-container').style.display = 'none';
+    document.getElementById('link-in-text').textContent = '';
+    document.getElementById('full-link').textContent = '';
+    status.style.color = 'rgb(0, 0, 0)';
+    status.textContent = '';
+}

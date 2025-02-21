@@ -18,26 +18,49 @@
             <p id="current-time"></p>
             <div id="header-links">
                 <div class="header-link-container">
-                    <a href="#about" class="header-link" id="header-link-1">About</a>
-                    <div id="header-link-underline-1" class="header-link-underline"></div>
+                    <button class="header-link">Home</button>
+                    <div class="header-link-underline"></div>
                 </div>
                 <div class="header-link-container">
-                    <a href="#projects" class="header-link" id="header-link-2">My Projects</a>
-                    <div id="header-link-underline-2" class="header-link-underline"></div>
+                    <button class="header-link">About</button>
+                    <div class="header-link-underline"></div>
                 </div>
                 <div class="header-link-container">
-                    <a href="#contact" class="header-link" id="header-link-3">Contact Me</a>
-                    <div id="header-link-underline-3" class="header-link-underline"></div>
+                    <button class="header-link">My Projects</button>
+                    <div class="header-link-underline"></div>
+                </div>
+                <div class="header-link-container">
+                    <button class="header-link">Contact Me</button>
+                    <div class="header-link-underline"></div>
                 </div>
             </div>
         </div>
-        <div id="main-content">
+        <div id="main-titles">
             <div id="main-heading-container">
                 <h1 id="main-heading"></h1>
                 <div id="imitation-cursor"></div>
             </div>
             <p id="main-subheading">Software Developer. Entrepreneur. Student.</p>
             <button id="enter-button">Continue<img id="enter-arrow" src="arrow-icon.png" width="30" height="30" alt="Right-facing arrow."></button>
+        </div>
+        <div id="about-me">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-text">My name is Ben Fink, and I'm a 15-year-old freshman at the Ethical Culture Fieldston School in New York City. I have been coding for 8+ years and I am proficient in object-based programming languages such as JavaScript, Python, and Java. I am also skilled in frontend and web development, with experience working at software companies as well as doing web design and operations for nonprofit organizations. I am the Chief of Operations, Financials and Technology at <a href="https://www.asparktoinspire.org" class="external-link">A Spark to Inspire</a>, a nonprofit organization based in the New York City Metropolitan Area that provides entertainment and activities for hospitalized children. Aside from using my technological expertise to support the nonprofit, I also use my knowledge of investment and resource management as well as my team leadership skills to lead the financial and company operations departments. I have a passion for computer science and programming, and I'm glad to have the opportunity to share my projects with the world.</p>
+        </div>
+        <div id="link-security-container">
+            <div id="shadow-background"></div>
+            <div id="link-security">
+                <h3 class="section-title">Warning: External Link</h3>
+                <p>The link you selected–<span id="link-in-text"></span>–connects to a website controlled by an organization not affiliated with BenFink.nyc.</p>
+                <div id="link-information">
+                    <p>Link: <span id="full-link"></span></p>
+                    <p>Status: <span id="link-security-status"></span></p>
+                </div>
+                <div id="link-action">
+                    <button onclick="closeLinkSecurity()">Cancel</button>
+                    <button onclick="openFocusedLink()">Continue</button>
+                </div>
+            </div>
         </div>
         <script src="app.js"></script>
     </body>
