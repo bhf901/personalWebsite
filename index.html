@@ -9,28 +9,31 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000" rel="stylesheet">
-        <!-- REFERENCE: DM Sans is imported. -->
+        <link rel="icon" type="image/x-icon" href="ben_fink_favicon.svg">
         <title>Ben Fink</title>
     </head>
     <body>
         <div id="header">
             <!-- logo here -->
-            <p id="current-time"></p>
+            <div onclick="switchSection('main-titles');">
+                <img id="logo" src="ben_fink_favicon.svg" width="75" height="75" alt="Ben Fink logo.">
+            </div>
+            <p id="current-time" onclick="timeToDate();"></p>
             <div id="header-links">
                 <div class="header-link-container">
-                    <button class="header-link">Home</button>
+                    <button class="header-link" onclick="switchSection('main-titles');">Home</button>
                     <div class="header-link-underline"></div>
                 </div>
                 <div class="header-link-container">
-                    <button class="header-link">About</button>
+                    <button class="header-link" onclick="switchSection('about-me');">About</button>
                     <div class="header-link-underline"></div>
                 </div>
                 <div class="header-link-container">
-                    <button class="header-link">My Projects</button>
+                    <button class="header-link" onclick="switchSection('my-projects');">My Projects</button>
                     <div class="header-link-underline"></div>
                 </div>
                 <div class="header-link-container">
-                    <button class="header-link">Contact Me</button>
+                    <button class="header-link" onclick="switchSection('contact-me');">Contact Me</button>
                     <div class="header-link-underline"></div>
                 </div>
             </div>
@@ -41,11 +44,32 @@
                 <div id="imitation-cursor"></div>
             </div>
             <p id="main-subheading">Software Developer. Entrepreneur. Student.</p>
-            <button id="enter-button">Continue<img id="enter-arrow" src="arrow-icon.png" width="30" height="30" alt="Right-facing arrow."></button>
+            <button id="enter-button" onclick="switchSection('about-me');">Continue<img id="enter-arrow" src="arrow-icon.png" width="30" height="30" alt="Right-facing arrow."></button>
         </div>
         <div id="about-me">
             <h2 class="section-title">About Me</h2>
-            <p class="section-text">My name is Ben Fink, and I'm a 15-year-old freshman at the Ethical Culture Fieldston School in New York City. I have been coding for 8+ years and I am proficient in object-based programming languages such as JavaScript, Python, and Java. I am also skilled in frontend and web development, with experience working at software companies as well as doing web design and operations for nonprofit organizations. I am the Chief of Operations, Financials and Technology at <a href="https://www.asparktoinspire.org" class="external-link">A Spark to Inspire</a>, a nonprofit organization based in the New York City Metropolitan Area that provides entertainment and activities for hospitalized children. Aside from using my technological expertise to support the nonprofit, I also use my knowledge of investment and resource management as well as my team leadership skills to lead the financial and company operations departments. I have a passion for computer science and programming, and I'm glad to have the opportunity to share my projects with the world.</p>
+            <p class="section-text">My name is Ben Fink, and I'm a 15-year-old freshman at the Ethical Culture Fieldston School in New York City. I have been coding for 8+ years, and I am proficient in object-based programming languages such as JavaScript, Python, and Java. I am also skilled in frontend and web development, with experience working at software companies as well as doing web design and operations for nonprofit organizations. I am the Chief of Operations, Financials and Technology at <a href="https://www.asparktoinspire.org" class="external-link">A Spark to Inspire</a>, a nonprofit organization based in the New York City Metropolitan Area that provides entertainment and activities for hospitalized children. Aside from using my technological expertise to support the nonprofit, I also use my knowledge of investment and resource management as well as my team leadership skills to lead the financial and company operations departments. I have a passion for computer science and programming, and I'm glad to have the opportunity to share my projects with the world.</p>
+        </div>
+        <div id="my-projects">
+            <h2 class="section-title">My Projects</h2>
+            <div class="project-container" id="project-container-1">
+                <a class="project-title external-link" href="https://www.tasklyproductivity.com">Taskly Productivity</a>
+                <p class="section-text">Description of taskly here.</p>
+            </div>
+            <div class="project-container">
+                <a class="project-title external-link" href="https://www.asparktoinspire.org">A Spark to Inspire</a>
+                <p class="section-text">Description of A Spark to Inspire here.</p>
+            </div>
+            <div class="project-container">
+                <a class="project-title external-link" href="https://www.fieldstoncalculator.com">Fieldston Calculator</a>
+                <p class="section-text">Description of Fieldston Calculator here.</p>
+            </div>
+        </div>
+        <div id="contact-me"></div>
+        <div id="social-links">
+            <a class="social-link" href="https://www.instagram.com/benfink_"><img src="instagram_logo.png" width="39.01" height="38.9" alt="Instagram logo."></a>
+            <a class="social-link" href="https://www.linkedin.com/in/ben-fink9"><img src="linkedin_logo.png" width="42" height="38.9" alt="LinkedIn logo."></a>
+            <a class="social-link" href="https://github.com/bhf901"><img src="github_logo.png" width="38.9" height="38.9" alt="GitHub logo."></a>
         </div>
         <div id="link-security-container">
             <div id="shadow-background"></div>

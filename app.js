@@ -20,10 +20,10 @@ function runTime() {
     document.getElementById('current-time').textContent = `${hour}:${minute} ${tOD}`;
 }
 
-setInterval(runTime, 1);
+let timeInterval = setInterval(runTime, 1);
 
 let letterIndex = 0;
-let letterAddInterval
+let letterAddInterval;
 
 function typeOutHeading() {
     const heading = document.getElementById('main-heading');
@@ -43,6 +43,7 @@ function typeOutHeading() {
         document.getElementById('enter-button').style.opacity = '1';
         document.getElementById('header').style.opacity = '1';
         subheading.style.color = 'black';
+        document.getElementById('social-links').style.opacity = '1';
     }
 }
 
@@ -98,4 +99,47 @@ function closeLinkSecurity() {
     document.getElementById('full-link').textContent = '';
     status.style.color = 'rgb(0, 0, 0)';
     status.textContent = '';
+}
+
+// KNOWN ISSUE: Social links still flash when logo is pressed on homepage.
+
+const sections = ['main-titles', 'about-me', 'my-projects', 'contact-me', 'social-links'];
+
+function switchSection(current) {
+    sections.forEach((section) => {
+        if (section !== current) {
+            document.getElementById(section).style.opacity = '0';
+            if (section !== 'social-links') {
+                setTimeout(() => {document.getElementById(section).style.display = 'none';}, 1000);
+            }
+        }
+    });
+    setTimeout(() => {
+        document.getElementById(current).style.display = 'block';
+        setTimeout(() => {
+            document.getElementById(current).style.opacity = '1';
+            document.getElementById('social-links').style.opacity = '1';
+        }, 100);
+    }, 1000);
+}
+
+function timeToDate() {
+    const time = document.getElementById('current-time');
+    time.style.opacity = '0';
+    clearInterval(timeInterval);
+    const t = new Date();
+    const month = t.getMonth() + 1;
+    const day = t.getDate();
+    const year = t.getFullYear();
+    setTimeout(() => {
+        time.textContent = `${month}/${day}/${year}`;
+        time.style.opacity = '1';
+        }, 1000);
+    setTimeout(() => {
+        time.style.opacity = '0';
+        setTimeout(() => {
+            timeInterval = setInterval(runTime, 1);
+            time.style.opacity = '1';
+        }, 1000);
+    }, 4000);
 }
