@@ -265,3 +265,34 @@ body {
 .copy-contact-info:active {
     background-color: gray;
 }
+
+.mobile-header-link {
+    text-align: center;
+    margin: 0 5px;
+    text-decoration: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 2px;
+    color: black;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+#mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 20% 0;
+    background-color: rgb(244, 246, 254);
+    opacity: 0;
+    display: none;
+}
+
+#mobile-header {
+    position: absolute;
+    top: 22px;
+    right: 5%;
+    display: none;
+}

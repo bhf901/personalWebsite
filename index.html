@@ -38,6 +38,9 @@
                 </div>
             </div>
         </div>
+        <div id="mobile-header" onclick="openMobileMenu();">
+            <img src="menu_icon.png" width="50" height="50" alt="A menu icon." style="pointer-events: none;">
+        </div>
         <div id="main-titles">
             <div id="main-heading-container">
                 <h1 id="main-heading"></h1>
@@ -86,7 +89,7 @@
         <div id="link-security-container">
             <div id="shadow-background"></div>
             <div id="link-security">
-                <h3 class="section-title">Warning: External Link</h3>
+                <h3 class="section-title" id="link-security-heading">Warning: External Link</h3>
                 <p>The link you selected–<span id="link-in-text"></span>–connects to a website controlled by an organization not affiliated with BenFink.nyc.</p>
                 <div id="link-information">
                     <p>Link: <span id="full-link"></span></p>
@@ -94,8 +97,22 @@
                 </div>
                 <div id="link-action">
                     <button onclick="closeLinkSecurity()">Cancel</button>
-                    <button onclick="openFocusedLink()">Continue</button>
+                    <button onclick="openFocusedLink()" style="margin: 0;">Continue</button>
                 </div>
+            </div>
+        </div>
+        <div id="mobile-menu">
+            <div class="header-link-container">
+                <button class="mobile-header-link" onclick="setTimeout(() => {switchSection('main-titles');}, 1100);">Home</button>
+            </div>
+            <div class="header-link-container">
+                <button class="mobile-header-link" onclick="setTimeout(() => {switchSection('about-me');}, 1100);">About</button>
+            </div>
+            <div class="header-link-container">
+                <button class="mobile-header-link" onclick="setTimeout(() => {switchSection('my-projects');}, 1100);">My Projects</button>
+            </div>
+            <div class="header-link-container">
+                <button class="mobile-header-link" onclick="setTimeout(() => {switchSection('contact-me');}, 1100);">Contact Me</button>
             </div>
         </div>
         <script src="app.js"></script>

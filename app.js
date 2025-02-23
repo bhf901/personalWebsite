@@ -157,3 +157,33 @@ function toClipboard(text) {
 }
 
 function nothing() {}
+
+function checkSize() {
+    if (document.documentElement.clientWidth < 550) {
+        document.getElementById('header-links').style.display = 'none';
+        document.getElementById('mobile-header').style.display = 'block';
+        document.getElementById('link-security-heading').textContent = 'Warning';
+    } else {
+        document.getElementById('header-links').style.display = 'flex';
+        document.getElementById('mobile-header').style.display = 'none';
+        document.getElementById('link-security-heading').textContent = 'Warning: External Link';
+    }
+}
+
+function openMobileMenu() {
+    document.getElementById('mobile-menu').style.display = 'block';
+    setTimeout(() => {document.getElementById('mobile-menu').style.opacity = '1';}, 100);
+}
+
+function closeMobileMenu() {
+    document.getElementById('mobile-menu').style.opacity = '0';
+    setTimeout(() => {document.getElementById('mobile-menu').style.display = 'none';}, 1100);
+}
+
+document.getElementById('mobile-menu').addEventListener('click', () => {
+    closeMobileMenu();
+});
+
+document.addEventListener('DOMContentLoaded', checkSize);
+
+window.addEventListener('resize', checkSize);
