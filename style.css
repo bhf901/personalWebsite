@@ -241,3 +241,27 @@ body {
 #project-container-1 {
     margin: 0;
 }
+
+.contact-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.copy-contact-info {
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 2px;
+    transition: background-color 0.3s ease;
+}
+
+.copy-contact-info:hover {
+    background-color: lightgray;
+}
+
+.copy-contact-info:active {
+    background-color: gray;
+}

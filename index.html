@@ -15,7 +15,7 @@
     <body>
         <div id="header">
             <!-- logo here -->
-            <div onclick="switchSection('main-titles');">
+            <div onclick="home === false ? switchSection('main-titles') : nothing();">
                 <img id="logo" src="ben_fink_favicon.svg" width="75" height="75" alt="Ben Fink logo.">
             </div>
             <p id="current-time" onclick="timeToDate();"></p>
@@ -54,18 +54,30 @@
             <h2 class="section-title">My Projects</h2>
             <div class="project-container" id="project-container-1">
                 <a class="project-title external-link" href="https://www.tasklyproductivity.com">Taskly Productivity</a>
-                <p class="section-text">Description of taskly here.</p>
+                <p class="section-text">Taskly Productivity is a website built to allow you to make the most of the precious time you have to get things done. A productivity hub of sorts, the website allows users to perform many necessary tasks for studying and working, such as setting timers and alarms, jotting down quick notes, and creating task lists. Users can also listen to music samples from Apple Music and read top stories from The New York Times, all on one sleek and well-designed webpage. The best part of all of this is that it's completely free and does not have any advertisements in any form. Supercharge your work and your life with Taskly Productivity!</p>
             </div>
             <div class="project-container">
                 <a class="project-title external-link" href="https://www.asparktoinspire.org">A Spark to Inspire</a>
-                <p class="section-text">Description of A Spark to Inspire here.</p>
+                <p class="section-text">A Spark to Inspire is a compassionate New York-based nonprofit dedicated to illuminating the hospital experience for children. We deliver thoughtfully crafted activity kits and engaging entertainment to young patients across the New York metropolitan area, sparking joy and curiosity. Our mission is to empower these children to explore their passions and nurture their intellectual and emotional development, bringing light and hope to their courageous battles.</p>
             </div>
             <div class="project-container">
                 <a class="project-title external-link" href="https://www.fieldstoncalculator.com">Fieldston Calculator</a>
-                <p class="section-text">Description of Fieldston Calculator here.</p>
+                <p class="section-text">Fieldston Calculator, one of my legacy projects, was my first coding project and the first time I began to explore the aspects of web design. It features a grade calculator with multiple different modes as well as a basic calculator.</p>
             </div>
         </div>
-        <div id="contact-me"></div>
+        <div id="contact-me">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-links" style="margin: 0 0 10px 0;">
+                <img src="email_icon.png" width="20" height="20" alt="An email symbol." style="margin: 0 2px;pointer-events: none;">
+                <a href="mailto:benhfink@gmail.com" class="external-link">benhfink@gmail.com</a>
+                <img src="copy_icon.png" width="20" height="20" alt="A copy icon." class="copy-contact-info" onclick="toClipboard('benhfink@gmail.com');">
+            </div>
+            <div class="contact-links">
+                <img src="phone_icon.png" width="20" height="20" alt="A phone symbol." style="margin: 0 2px;pointer-events: none;">
+                <a href="tel:+16468078585" class="external-link">+1 (646) 807-8585</a>
+                <img src="copy_icon.png" width="20" height="20" alt="A copy icon." class="copy-contact-info" onclick="toClipboard('+1 (646) 819-1316');">
+            </div>
+        </div>
         <div id="social-links">
             <a class="social-link" href="https://www.instagram.com/benfink_"><img src="instagram_logo.png" width="39.01" height="38.9" alt="Instagram logo."></a>
             <a class="social-link" href="https://www.linkedin.com/in/ben-fink9"><img src="linkedin_logo.png" width="42" height="38.9" alt="LinkedIn logo."></a>

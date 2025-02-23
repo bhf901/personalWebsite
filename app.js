@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('a');
     links.forEach((link) => {
         link.addEventListener('click', (e) => {
-            if (!link.href.includes(window.location.hostname) && !link.href.includes('mailto')) {
+            if (!link.href.includes(window.location.hostname) && !link.href.includes('mailto:') && !link.href.includes('tel:')) {
                 e.preventDefault();
                 linkSecurity(link.href);
             }
@@ -101,7 +101,7 @@ function closeLinkSecurity() {
     status.textContent = '';
 }
 
-// KNOWN ISSUE: Social links still flash when logo is pressed on homepage.
+let home = true;
 
 const sections = ['main-titles', 'about-me', 'my-projects', 'contact-me', 'social-links'];
 
@@ -112,6 +112,12 @@ function switchSection(current) {
             if (section !== 'social-links') {
                 setTimeout(() => {document.getElementById(section).style.display = 'none';}, 1000);
             }
+        }
+
+        if (current === 'main-titles') {
+            home = true;
+        } else {
+            home = false;
         }
     });
     setTimeout(() => {
@@ -143,3 +149,11 @@ function timeToDate() {
         }, 1000);
     }, 4000);
 }
+
+function toClipboard(text) {
+    navigator.clipboard.writeText(text)
+        .then(() => console.log(`"${text}" copied to clipboard successfully.`))
+        .catch((err) => console.error(`Error encountered when attempting to copy to clipboard. ${err}`));
+}
+
+function nothing() {}
