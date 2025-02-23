@@ -29,7 +29,8 @@ function typeOutHeading() {
     const heading = document.getElementById('main-heading');
     const subheading = document.getElementById('main-subheading');
     const cursor = document.getElementById('imitation-cursor');
-    const name = ['B', 'e', 'n', ' ', 'F', 'i', 'n', 'k']
+    const name = ['B', 'e', 'n', ' ', 'F', 'i', 'n', 'k'];
+    heading.textContent = '';
     if (letterIndex < 8) {
         heading.textContent += name[letterIndex];
         cursor.style.width = '5px';

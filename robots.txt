@@ -1,0 +1,4 @@
+# Robots.TXT file for BenFink.nyc
+
+User-agent: *
+Allow: /
