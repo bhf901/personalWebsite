@@ -44,6 +44,7 @@ function typeOutHeading() {
         document.getElementById('header').style.opacity = '1';
         subheading.style.color = 'black';
         document.getElementById('social-links').style.opacity = '1';
+        document.getElementById('mobile-header').style.opacity = '1';
     }
 }
 
@@ -157,6 +158,8 @@ function toClipboard(text) {
 }
 
 function nothing() {}
+
+let smallViewport;
 
 function checkSize() {
     if (document.documentElement.clientWidth < 550) {
