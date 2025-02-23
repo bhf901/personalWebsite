@@ -30,7 +30,6 @@ function typeOutHeading() {
     const subheading = document.getElementById('main-subheading');
     const cursor = document.getElementById('imitation-cursor');
     const name = ['B', 'e', 'n', ' ', 'F', 'i', 'n', 'k'];
-    heading.textContent = '';
     if (letterIndex < 8) {
         heading.textContent += name[letterIndex];
         cursor.style.width = '5px';
@@ -51,6 +50,7 @@ function typeOutHeading() {
 
 document.addEventListener('DOMContentLoaded', () => {
     letterAddInterval = setInterval(typeOutHeading, 100);
+    document.getElementById('main-heading').textContent = '';
 });
 
 document.addEventListener('DOMContentLoaded', () => {
