@@ -160,6 +160,7 @@ function nothing() {}
 
 function checkSize() {
     if (document.documentElement.clientWidth < 550) {
+        const linkSecurity = document.getElementById('link-security');
         document.getElementById('header-links').style.display = 'none';
         document.getElementById('mobile-header').style.display = 'block';
         document.getElementById('link-security-heading').textContent = 'Warning';
