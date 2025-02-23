@@ -103,15 +103,18 @@ function closeLinkSecurity() {
 }
 
 let home = true;
+let currentSection = 'main-titles';
 
 const sections = ['main-titles', 'about-me', 'my-projects', 'contact-me', 'social-links'];
 
 function switchSection(current) {
     sections.forEach((section) => {
-        if (section !== current) {
-            document.getElementById(section).style.opacity = '0';
-            if (section !== 'social-links') {
-                setTimeout(() => {document.getElementById(section).style.display = 'none';}, 1000);
+        if (current !== currentSection) {
+            if (section !== current) {
+                document.getElementById(section).style.opacity = '0';
+                if (section !== 'social-links') {
+                    setTimeout(() => {document.getElementById(section).style.display = 'none';}, 1000);
+                }
             }
         }
 
@@ -128,6 +131,8 @@ function switchSection(current) {
             document.getElementById('social-links').style.opacity = '1';
         }, 100);
     }, 1000);
+
+    currentSection = current;
 }
 
 function timeToDate() {
@@ -158,8 +163,6 @@ function toClipboard(text) {
 }
 
 function nothing() {}
-
-let smallViewport;
 
 function checkSize() {
     if (document.documentElement.clientWidth < 550) {
