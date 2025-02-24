@@ -1,3 +1,5 @@
+// Copyright © 2025 Ben Fink. All rights reserved. This source code is proprietary and confidential. Unauthorized copying, modification, distribution, or use of this file, via any medium, is strictly prohibited without express written permission from the copyright holder.
+
 function runTime() {
     let tOD;
     const t = new Date();
@@ -195,3 +197,5 @@ document.getElementById('mobile-menu').addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', checkSize);
 
 window.addEventListener('resize', checkSize);
+
+// Copyright © 2025 Ben Fink. All rights reserved. This source code is proprietary and confidential. Unauthorized copying, modification, distribution, or use of this file, via any medium, is strictly prohibited without express written permission from the copyright holder.
