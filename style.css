@@ -294,6 +294,7 @@ body {
 }
 
 #mobile-header {
+    /* at bottom of mobile header */
     position: absolute;
     top: 22px;
     right: 5%;
