@@ -294,10 +294,17 @@ body {
 }
 
 #mobile-header {
-    /* at bottom of mobile header */
     position: absolute;
     top: 22px;
     right: 5%;
     display: none;
     opacity: 0;
+}
+
+#mobile-dismiss-notice {
+    position: absolute;
+    width: 50%;
+    top: 85vh;
+    left: 25vw;
+    text-align: center;
 }
