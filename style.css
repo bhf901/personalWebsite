@@ -306,7 +306,7 @@ body {
 #mobile-dismiss-notice {
     position: absolute;
     width: 50%;
-    top: 85vh;
+    top: 85dvh;
     left: 25vw;
     text-align: center;
 }
