@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <meta name="description" content="Showcasing innovative software development projects, web apps, and coding expertise. Explore my portfolio of full-stack, AI, and open-source projects.">
         <link rel="canonical" href="https://www.benfink.nyc">
-        <link rel="stylesheet" href="style.css">
+        <link id="style" rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +26,9 @@
                 <img id="logo" src="ben_fink_favicon.svg" width="75" height="75" alt="Ben Fink logo.">
             </div>
             <p id="current-time" onclick="timeToDate();"></p>
+            <div id="dmt-container" onclick="darkMode(darkModeStatus);">
+                <img id="dark-mode-toggle" src="dark_mode_black.png" width="30" height="30" style="pointer-events: none;" alt="A toggle for dark mode.">
+            </div>
             <div id="header-links">
                 <div class="header-link-container">
                     <button class="header-link" onclick="switchSection('main-titles');">Home</button>
@@ -46,7 +49,7 @@
             </div>
         </div>
         <div id="mobile-header" onclick="openMobileMenu();">
-            <img src="menu_icon.png" width="50" height="50" alt="A menu icon." style="pointer-events: none;">
+            <img id="mobile-menu-icon" src="menu_icon.png" width="50" height="50" alt="A menu icon." style="pointer-events: none;">
         </div>
         <div id="main-titles">
             <div id="main-heading-container">
@@ -78,20 +81,20 @@
         <div id="contact-me">
             <h2 class="section-title">Contact Me</h2>
             <div class="contact-links" style="margin: 0 0 10px 0;">
-                <img src="email_icon.png" width="20" height="20" alt="An email symbol." style="margin: 0 2px;pointer-events: none;">
+                <img id="email-icon" src="email_icon.png" width="20" height="20" alt="An email symbol." style="margin: 0 2px;pointer-events: none;">
                 <a href="mailto:ben@benfink.nyc" class="external-link">ben@benfink.nyc</a>
                 <img src="copy_icon.png" width="20" height="20" alt="A copy icon." class="copy-contact-info" onclick="toClipboard('ben@benfink.nyc');">
             </div>
             <div class="contact-links">
-                <img src="phone_icon.png" width="20" height="20" alt="A phone symbol." style="margin: 0 2px;pointer-events: none;">
+                <img id="phone-icon" src="phone_icon.png" width="20" height="20" alt="A phone symbol." style="margin: 0 2px;pointer-events: none;">
                 <a href="tel:+16468078585" class="external-link">+1 (646) 807-8585</a>
                 <img src="copy_icon.png" width="20" height="20" alt="A copy icon." class="copy-contact-info" onclick="toClipboard('+16468078585');">
             </div>
         </div>
         <div id="social-links">
-            <a class="social-link" href="https://www.instagram.com/benfink_"><img src="instagram_logo.png" width="39.01" height="38.9" alt="Instagram logo." style="pointer-events: none;"></a>
-            <a class="social-link" href="https://www.linkedin.com/in/ben-fink9"><img src="linkedin_logo.png" width="42" height="38.9" alt="LinkedIn logo." style="pointer-events: none;"></a>
-            <a class="social-link" href="https://github.com/bhf901"><img src="github_logo.png" width="38.9" height="38.9" alt="GitHub logo." style="pointer-events: none;"></a>
+            <a class="social-link" href="https://www.instagram.com/benfink_"><img id="sl1" src="instagram_logo.png" width="39.01" height="38.9" alt="Instagram logo." style="pointer-events: none;"></a>
+            <a class="social-link" href="https://www.linkedin.com/in/ben-fink9"><img id="sl2" src="linkedin_logo.png" width="42" height="38.9" alt="LinkedIn logo." style="pointer-events: none;"></a>
+            <a class="social-link" href="https://github.com/bhf901"><img id="sl3" src="github_logo.png" width="38.9" height="38.9" alt="GitHub logo." style="pointer-events: none;"></a>
         </div>
         <div id="link-security-container">
             <div id="shadow-background"></div>

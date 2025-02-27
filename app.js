@@ -44,7 +44,7 @@ function typeOutHeading() {
         cursor.style.width = '0';
         document.getElementById('enter-button').style.opacity = '1';
         document.getElementById('header').style.opacity = '1';
-        subheading.style.color = 'black';
+        subheading.style.opacity = '1';
         document.getElementById('social-links').style.opacity = '1';
         document.getElementById('mobile-header').style.opacity = '1';
     }
@@ -197,5 +197,51 @@ document.getElementById('mobile-menu').addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', checkSize);
 
 window.addEventListener('resize', checkSize);
+
+let darkModeStatus = true;
+
+function darkMode(status) {
+    if (status === true) {
+        document.getElementById('style').href = 'dark_mode.css';
+        document.getElementById('enter-arrow').src = 'arrow_white.png';
+        document.getElementById('sl1').src = 'instagram_white.png';
+        document.getElementById('sl2').src = 'linkedin_white.png';
+        document.getElementById('sl3').src = 'github_white.png';
+        document.getElementById('email-icon').src = 'mail_icon_white.png';
+        document.getElementById('phone-icon').src = 'phone_icon_white.png';
+        document.getElementById('mobile-menu-icon').src = 'menu_white.png';
+        document.getElementById('dark-mode-toggle').src = 'dark_mode_white.png';
+        document.querySelectorAll('.copy-contact-info').forEach((icon) => {
+            icon.src = 'copy_icon_white.png';
+        });
+        darkModeStatus = false;
+    } else if (status === false) {
+        document.getElementById('style').href = 'style.css';
+        document.getElementById('enter-arrow').src = 'arrow-icon.png';
+        document.getElementById('sl1').src = 'instagram_logo.png';
+        document.getElementById('sl2').src = 'linkedin_logo.png';
+        document.getElementById('sl3').src = 'github_logo.png';
+        document.getElementById('email-icon').src = 'email_icon.png';
+        document.getElementById('phone-icon').src = 'phone_icon.png';
+        document.getElementById('mobile-menu-icon').src = 'menu_icon.png';
+        document.getElementById('dark-mode-toggle').src = 'dark_mode_black.png';
+        document.querySelectorAll('.copy-contact-info').forEach((icon) => {
+            icon.src = 'copy_icon.png';
+        });
+        darkModeStatus = true;
+    }
+}
+
+function isDarkMode() {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (isDarkMode()) {
+        darkMode(true);
+    } else {
+        darkMode(false);
+    }
+});
 
 // Copyright © 2025 Ben Fink. All rights reserved. This source code is proprietary and confidential. Unauthorized copying, modification, distribution, or use of this file, via any medium, is strictly prohibited without express written permission from the copyright holder.
