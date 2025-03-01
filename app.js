@@ -244,4 +244,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+document.querySelectorAll('.form-input').forEach((formItem) => {
+    formItem.addEventListener('input', () => {
+        if (formItem.value) {
+            if (darkModeStatus === true) {
+                formItem.style.borderColor = 'black';
+            } else {
+                formItem.style.borderColor = 'white';
+            }
+        } else {
+            formItem.style.borderColor = 'red';
+        }
+    });
+});
+
+document.getElementById('contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    let approved = [];
+    document.querySelectorAll('.form-input').forEach((input) => {
+        if (!input.value) {
+            input.style.borderColor = 'red';
+        } else {
+            if (darkModeStatus === false) {
+                input.style.borderColor = 'white';
+            } else if (darkModeStatus === true) {
+                input.style.borderColor = 'black';
+            }
+            approved.push(input.name);
+        }
+    });
+    if (approved.length === 4) {
+        requestSubmit();
+    }
+});
+
+function requestSubmit() {
+    document.getElementById('external-processing-container').style.display = 'block';
+}
+
+function clearAndSubmitContact() {
+    document.getElementById('contact-form').submit();
+    document.getElementById('contact-form').reset();
+}
+
 // Copyright © 2025 Ben Fink. All rights reserved. This source code is proprietary and confidential. Unauthorized copying, modification, distribution, or use of this file, via any medium, is strictly prohibited without express written permission from the copyright holder.

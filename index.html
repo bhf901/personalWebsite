@@ -90,6 +90,21 @@
                 <a href="tel:+16468078585" class="external-link">+1 (646) 807-8585</a>
                 <img src="copy_icon.png" width="20" height="20" alt="A copy icon." class="copy-contact-info" onclick="toClipboard('+16468078585');">
             </div>
+            <div id="contact-form-container">
+                <h3>Send Me A Message</h3>
+                <form id="contact-form" action="https://formspree.io/f/mjkgnydj" method="POST">
+                    <label for="contact-name" style="display: none;">Name</label>
+                    <input id="contact-name" type="text" class="form-input" name="name" placeholder="Name"><br>
+                    <label for="contact-email" style="display: none;">Email</label>
+                    <input id="contact-email" type="text" class="form-input" name="email" placeholder="Email"><br>
+                    <label for="contact-subject" style="display: none;">Subject</label>
+                    <input id="contact-subject" type="text" class="form-input" name="subject" placeholder="Subject"><br>
+                    <label for="contact-message" style="display: none;">Message</label>
+                    <textarea class="form-input" id="contact-message" name="message" placeholder="Type your message here..."></textarea><br>
+                    <button class="contact-buttons" type="reset" style="margin: 0;">Clear</button>
+                    <button class="contact-buttons" type="submit">Send</button>
+                </form>
+            </div>
         </div>
         <div id="social-links">
             <a class="social-link" href="https://www.instagram.com/benfink_"><img id="sl1" src="instagram_logo.png" width="39.01" height="38.9" alt="Instagram logo." style="pointer-events: none;"></a>
@@ -97,7 +112,7 @@
             <a class="social-link" href="https://github.com/bhf901"><img id="sl3" src="github_logo.png" width="38.9" height="38.9" alt="GitHub logo." style="pointer-events: none;"></a>
         </div>
         <div id="link-security-container">
-            <div id="shadow-background"></div>
+            <div class="shadow-background"></div>
             <div id="link-security">
                 <h3 class="section-title" id="link-security-heading">Warning: External Link</h3>
                 <p>The link you selected–<span id="link-in-text"></span>–connects to a website controlled by an organization not affiliated with BenFink.nyc.</p>
@@ -108,6 +123,18 @@
                 <div id="link-action">
                     <button onclick="closeLinkSecurity()">Cancel</button>
                     <button onclick="openFocusedLink()" style="margin: 0;">Continue</button>
+                </div>
+            </div>
+        </div>
+        <div id="external-processing-container">
+            <div class="shadow-background"></div>
+            <div id="external-processing">
+                <h3 class="section-title">Warning</h3>
+                <p>To secure your information, the data you provided in this form will be processed by Formspree.</p>
+                <p>If you do not want your information to be processed externally, click "Deny."</p>
+                <div id="processing-action">
+                    <button onclick="document.getElementById('external-processing-container').style.display = 'none';">Deny</button>
+                    <button onclick="document.getElementById('external-processing-container').style.display = 'none';clearAndSubmitContact();" style="margin: 0;">Allow</button>
                 </div>
             </div>
         </div>

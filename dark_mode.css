@@ -152,7 +152,7 @@ body {
     text-align: center;
 }
 
-#shadow-background {
+.shadow-background {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -318,5 +318,79 @@ body {
     user-select: none;
     -webkit-user-select: none;
 }
+
+#contact-form-container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form-input {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 5px 0;
+    outline: none;
+    transition: border 0.2s ease;
+    width: 90%;
+    max-width: 500px;
+    min-width: 150px;
+}
+
+#contact-message {
+    resize: none;
+    height: 100px;
+}
+
+.form-input:focus {
+    border: 3px solid white;
+}
+
+.contact-buttons {
+    padding: 15px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    font-size: 16pt;
+    margin: 0 15px 0 0;
+}
+
+#contact-form-container {
+    margin: 50px auto 0 auto;
+}
+
+#external-processing-container {
+    display: none;
+}
+
+#external-processing {
+    box-sizing: border-box;
+    width: 75%;
+    padding: 15px;
+    border: 1px solid white;
+    border-radius: 10px;
+    position: fixed;
+    top: 15%;
+    left: 12.5%;
+    right: 12.5%;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
+    background-color: rgb(0, 0, 0);
+}
+
+#processing-action button {
+    padding: 15px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    font-size: 16pt;
+    margin: 0 15px 0 0;
+}
+
 
 /* Copyright © 2025 Ben Fink. All rights reserved. This source code is proprietary and confidential. Unauthorized copying, modification, distribution, or use of this file, via any medium, is strictly prohibited without express written permission from the copyright holder. */
