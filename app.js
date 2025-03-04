@@ -214,6 +214,9 @@ function darkMode(status) {
         document.querySelectorAll('.copy-contact-info').forEach((icon) => {
             icon.src = 'copy_icon_white.png';
         });
+        document.querySelectorAll('.form-input').forEach((input) => {
+            input.style.borderColor = 'white';
+        });
         darkModeStatus = false;
     } else if (status === false) {
         document.getElementById('style').href = 'style.css';
@@ -227,6 +230,9 @@ function darkMode(status) {
         document.getElementById('dark-mode-toggle').src = 'dark_mode_black.png';
         document.querySelectorAll('.copy-contact-info').forEach((icon) => {
             icon.src = 'copy_icon.png';
+        });
+        document.querySelectorAll('.form-input').forEach((input) => {
+            input.style.borderColor = 'black';
         });
         darkModeStatus = true;
     }
@@ -285,6 +291,16 @@ function requestSubmit() {
 function clearAndSubmitContact() {
     document.getElementById('contact-form').submit();
     document.getElementById('contact-form').reset();
+}
+
+function clearForm() {
+    document.querySelectorAll('.form-input').forEach((input) => {
+        if (darkModeStatus === false) {
+            input.style.borderColor = 'white';
+        } else if (darkModeStatus === true) {
+            input.style.borderColor = 'black';
+        }
+    });
 }
 
 // Copyright © 2025 Ben Fink. All rights reserved. This source code is proprietary and confidential. Unauthorized copying, modification, distribution, or use of this file, via any medium, is strictly prohibited without express written permission from the copyright holder.
