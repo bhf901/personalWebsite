@@ -19,6 +19,14 @@
         <link rel="apple-touch-icon" sizes="120x120" href="ben_fink_favicon_genericpng.png">
         <meta name="theme-color" content="#F4F6FEFF">
         <title>Ben Fink. Software Developer, Entrepreneur, Student.</title>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Ben Fink",
+                "url": "https://www.benfink.nyc"
+            }
+        </script>
     </head>
     <body>
         <div id="header">
@@ -40,6 +48,10 @@
                 </div>
                 <div class="header-link-container">
                     <button class="header-link" onclick="switchSection('my-projects');">My Projects</button>
+                    <div class="header-link-underline"></div>
+                </div>
+                <div class="header-link-container">
+                    <button class="header-link" onclick="switchSection('my-skills')">My Skills</button>
                     <div class="header-link-underline"></div>
                 </div>
                 <div class="header-link-container">
@@ -78,6 +90,7 @@
                 <p class="section-text">Fieldston Calculator, one of my legacy projects, was my first coding project and the first time I began to explore the aspects of web design. It features a grade calculator with multiple different modes as well as a basic calculator.</p>
             </div>
         </div>
+        <div id="my-skills"></div>
         <div id="contact-me">
             <h2 class="section-title">Contact Me</h2>
             <div class="contact-links" style="margin: 0 0 10px 0;">
