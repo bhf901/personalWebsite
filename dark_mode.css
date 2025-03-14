@@ -354,7 +354,7 @@ body {
     background-color: rgba(0, 0, 0, 0);
     cursor: pointer;
     font-size: 16pt;
-    margin: 0 15px 0 0;
+    margin: 0 5px;
 }
 
 #contact-form-container {
@@ -392,5 +392,10 @@ body {
     margin: 0 15px 0 0;
 }
 
+#contact-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* Copyright © 2025 Ben Fink. All rights reserved. This source code is proprietary and confidential. Unauthorized copying, modification, distribution, or use of this file, via any medium, is strictly prohibited without express written permission from the copyright holder. */
