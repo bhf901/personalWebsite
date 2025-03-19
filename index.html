@@ -29,140 +29,146 @@
         </script>
     </head>
     <body>
-        <div id="header">
-            <div onclick="home === false ? switchSection('main-titles') : nothing();">
-                <img id="logo" src="ben_fink_favicon.svg" width="75" height="75" alt="Ben Fink logo.">
-            </div>
-            <p id="current-time" onclick="timeToDate();"></p>
-            <div id="dmt-container" onclick="darkMode(darkModeStatus);">
-                <img id="dark-mode-toggle" src="dark_mode_black.png" width="30" height="30" style="pointer-events: none;" alt="A toggle for dark mode.">
-            </div>
-            <div id="header-links">
-                <div class="header-link-container">
-                    <button class="header-link" onclick="switchSection('main-titles');">Home</button>
-                    <div class="header-link-underline"></div>
+        <div id="content" style="display: none;">
+            <div id="header">
+                <div onclick="home === false ? switchSection('main-titles') : nothing();">
+                    <img id="logo" src="ben_fink_favicon.svg" width="75" height="75" alt="Ben Fink logo.">
                 </div>
-                <div class="header-link-container">
-                    <button class="header-link" onclick="switchSection('about-me');">About</button>
-                    <div class="header-link-underline"></div>
+                <p id="current-time" onclick="timeToDate();"></p>
+                <div id="dmt-container" onclick="darkMode(darkModeStatus);">
+                    <img id="dark-mode-toggle" src="dark_mode_black.png" width="30" height="30" style="pointer-events: none;" alt="A toggle for dark mode.">
                 </div>
-                <div class="header-link-container">
-                    <button class="header-link" onclick="switchSection('my-projects');">My Projects</button>
-                    <div class="header-link-underline"></div>
-                </div>
-                <div class="header-link-container">
-                    <button class="header-link" onclick="switchSection('contact-me');">Contact Me</button>
-                    <div class="header-link-underline"></div>
-                </div>
-            </div>
-        </div>
-        <div id="mobile-header" onclick="openMobileMenu();">
-            <img id="mobile-menu-icon" src="menu_icon.png" width="50" height="50" alt="A menu icon." style="pointer-events: none;">
-        </div>
-        <div id="main-titles">
-            <div id="main-heading-container">
-                <h1 id="main-heading">Ben Fink</h1>
-                <div id="imitation-cursor"></div>
-            </div>
-            <p id="main-subheading">Software Developer. Entrepreneur. Student.</p>
-            <button id="enter-button" onclick="switchSection('about-me');">Continue<img id="enter-arrow" src="arrow-icon.png" width="30" height="30" alt="Right-facing arrow."></button>
-        </div>
-        <div id="about-me">
-            <h2 class="section-title">About Me</h2>
-            <p class="section-text">My name is Ben Fink, and I'm a 15-year-old freshman at the Ethical Culture Fieldston School in New York City. I have been coding for more than 8 years, and I am proficient in object-oriented programming languages such as JavaScript, Python, and Java. I am also skilled in frontend and web development, with experience working at software companies as well as doing web design and operations for nonprofit organizations. I am the Chief of Operations, Financials and Technology at <a href="https://www.asparktoinspire.org" class="external-link">A Spark to Inspire</a>, a nonprofit organization based in the New York City Metropolitan Area that provides entertainment and activities for hospitalized children. Aside from using my technological expertise to support the nonprofit, I also use my knowledge of investment and resource management as well as my team leadership skills to lead the financial and company operations departments. I have a passion for computer science and programming, and I'm glad to have the opportunity to share my projects with the world.</p>
-        </div>
-        <div id="my-projects">
-            <h2 class="section-title">My Projects</h2>
-            <div class="project-container" id="project-container-1">
-                <a class="project-title external-link" href="https://www.tasklyproductivity.com">Taskly Productivity</a>
-                <p class="section-text">Taskly Productivity is a website built to allow you to make the most of the precious time you have to get things done. A productivity hub of sorts, the website allows users to perform many necessary tasks for studying and working, such as setting timers and alarms, jotting down quick notes, and creating task lists. Users can also listen to music samples from Apple Music and read top stories from The New York Times, all on one sleek and well-designed webpage. The best part of all of this is that it's completely free and does not have any advertisements in any form. Supercharge your work and your life with Taskly Productivity!</p>
-            </div>
-            <div class="project-container">
-                <a class="project-title external-link">A Spark to Inspire</a>
-                <p class="section-text">A Spark to Inspire is a compassionate New York-based nonprofit dedicated to illuminating the hospital experience for children. We deliver thoughtfully crafted activity kits and engaging entertainment to young patients across the New York metropolitan area, sparking joy and curiosity. Our mission is to empower these children to explore their passions and nurture their intellectual and emotional development, bringing light and hope to their courageous battles.</p>
-            </div>
-            <div class="project-container">
-                <a class="project-title external-link" href="https://www.fieldstoncalculator.com">Fieldston Calculator</a>
-                <p class="section-text">Fieldston Calculator, one of my legacy projects, was my first coding project and the first time I began to explore the aspects of web design. It features a grade calculator with multiple different modes as well as a basic calculator.</p>
-            </div>
-        </div>
-        <div id="contact-me">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-links" style="margin: 0 0 10px 0;">
-                <img id="email-icon" src="email_icon.png" width="20" height="20" alt="An email symbol." style="margin: 0 2px;pointer-events: none;">
-                <a href="mailto:ben@benfink.nyc" class="external-link">ben@benfink.nyc</a>
-                <img src="copy_icon.png" width="20" height="20" alt="A copy icon." class="copy-contact-info" onclick="toClipboard('ben@benfink.nyc');">
-            </div>
-            <div class="contact-links">
-                <img id="phone-icon" src="phone_icon.png" width="20" height="20" alt="A phone symbol." style="margin: 0 2px;pointer-events: none;">
-                <a href="tel:+16468078585" class="external-link">+1 (646) 807-8585</a>
-                <img src="copy_icon.png" width="20" height="20" alt="A copy icon." class="copy-contact-info" onclick="toClipboard('+16468078585');">
-            </div>
-            <div id="contact-form-container">
-                <h3>Send Me A Message</h3>
-                <form id="contact-form" action="https://formspree.io/f/mjkgnydj" method="POST">
-                    <label for="contact-name" style="display: none;">Name</label>
-                    <input id="contact-name" type="text" class="form-input" name="name" placeholder="Name"><br>
-                    <label for="contact-email" style="display: none;">Email</label>
-                    <input id="contact-email" type="text" class="form-input" name="email" placeholder="Email"><br>
-                    <label for="contact-subject" style="display: none;">Subject</label>
-                    <input id="contact-subject" type="text" class="form-input" name="subject" placeholder="Subject"><br>
-                    <label for="contact-message" style="display: none;">Message</label>
-                    <textarea class="form-input" id="contact-message" name="message" placeholder="Type your message here..."></textarea><br>
-                    <div id="contact-form-actions">
-                        <button class="contact-buttons" type="reset" onclick="clearForm();">Clear</button>
-                        <button class="contact-buttons" type="submit">Send</button>
+                <div id="header-links">
+                    <div class="header-link-container">
+                        <button class="header-link" onclick="switchSection('main-titles');">Home</button>
+                        <div class="header-link-underline"></div>
                     </div>
-                </form>
-            </div>
-        </div>
-        <div id="social-links">
-            <a class="social-link" href="https://www.instagram.com/benfink_"><img id="sl1" src="instagram_logo.png" width="39.01" height="38.9" alt="Instagram logo." style="pointer-events: none;"></a>
-            <a class="social-link" href="https://www.linkedin.com/in/ben-fink9"><img id="sl2" src="linkedin_logo.png" width="42" height="38.9" alt="LinkedIn logo." style="pointer-events: none;"></a>
-            <a class="social-link" href="https://github.com/bhf901"><img id="sl3" src="github_logo.png" width="38.9" height="38.9" alt="GitHub logo." style="pointer-events: none;"></a>
-        </div>
-        <div id="link-security-container">
-            <div class="shadow-background"></div>
-            <div id="link-security">
-                <h3 class="section-title" id="link-security-heading">Warning: External Link</h3>
-                <p>The link you selected–<span id="link-in-text"></span>–connects to a website controlled by an organization not affiliated with BenFink.nyc.</p>
-                <div id="link-information">
-                    <p style="word-wrap: break-word;">Link: <span id="full-link"></span></p>
-                    <p>Status: <span id="link-security-status"></span></p>
-                </div>
-                <div id="link-action">
-                    <button onclick="closeLinkSecurity()">Cancel</button>
-                    <button onclick="openFocusedLink()" style="margin: 0;">Continue</button>
+                    <div class="header-link-container">
+                        <button class="header-link" onclick="switchSection('about-me');">About</button>
+                        <div class="header-link-underline"></div>
+                    </div>
+                    <div class="header-link-container">
+                        <button class="header-link" onclick="switchSection('my-projects');">My Projects</button>
+                        <div class="header-link-underline"></div>
+                    </div>
+                    <div class="header-link-container">
+                        <button class="header-link" onclick="switchSection('contact-me');">Contact Me</button>
+                        <div class="header-link-underline"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div id="external-processing-container">
-            <div class="shadow-background"></div>
-            <div id="external-processing">
-                <h3 class="section-title">Warning</h3>
-                <p>To secure your information, the data you provided in this form will be processed by Formspree.</p>
-                <p>If you do not want your information to be processed externally, click "Deny."</p>
-                <div id="processing-action">
-                    <button onclick="document.getElementById('external-processing-container').style.display = 'none';">Deny</button>
-                    <button onclick="document.getElementById('external-processing-container').style.display = 'none';clearAndSubmitContact();" style="margin: 0;">Allow</button>
+            <div id="mobile-header" onclick="openMobileMenu();">
+                <img id="mobile-menu-icon" src="menu_icon.png" width="50" height="50" alt="A menu icon." style="pointer-events: none;">
+            </div>
+            <div id="main-titles">
+                <div id="main-heading-container">
+                    <h1 id="main-heading">Ben Fink</h1>
+                    <div id="imitation-cursor"></div>
+                </div>
+                <p id="main-subheading">Software Developer. Entrepreneur. Student.</p>
+                <button id="enter-button" onclick="switchSection('about-me');">Continue<img id="enter-arrow" src="arrow-icon.png" width="30" height="30" alt="Right-facing arrow."></button>
+            </div>
+            <div id="about-me">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-text">My name is Ben Fink, and I'm a 15-year-old freshman at the Ethical Culture Fieldston School in New York City. I have been coding for more than 8 years, and I am proficient in object-oriented programming languages such as JavaScript, Python, and Java. I am also skilled in frontend and web development, with experience working at software companies as well as doing web design and operations for nonprofit organizations. I am the Chief of Operations, Financials and Technology at <a href="https://www.asparktoinspire.org" class="external-link">A Spark to Inspire</a>, a nonprofit organization based in the New York City Metropolitan Area that provides entertainment and activities for hospitalized children. Aside from using my technological expertise to support the nonprofit, I also use my knowledge of investment and resource management as well as my team leadership skills to lead the financial and company operations departments. I have a passion for computer science and programming, and I'm glad to have the opportunity to share my projects with the world.</p>
+            </div>
+            <div id="my-projects">
+                <h2 class="section-title">My Projects</h2>
+                <div class="project-container" id="project-container-1">
+                    <a class="project-title external-link" href="https://www.tasklyproductivity.com">Taskly Productivity</a>
+                    <p class="section-text">Taskly Productivity is a website built to allow you to make the most of the precious time you have to get things done. A productivity hub of sorts, the website allows users to perform many necessary tasks for studying and working, such as setting timers and alarms, jotting down quick notes, and creating task lists. Users can also listen to music samples from Apple Music and read top stories from The New York Times, all on one sleek and well-designed webpage. The best part of all of this is that it's completely free and does not have any advertisements in any form. Supercharge your work and your life with Taskly Productivity!</p>
+                </div>
+                <div class="project-container">
+                    <a class="project-title external-link">A Spark to Inspire</a>
+                    <p class="section-text">A Spark to Inspire is a compassionate New York-based nonprofit dedicated to illuminating the hospital experience for children. We deliver thoughtfully crafted activity kits and engaging entertainment to young patients across the New York metropolitan area, sparking joy and curiosity. Our mission is to empower these children to explore their passions and nurture their intellectual and emotional development, bringing light and hope to their courageous battles.</p>
+                </div>
+                <div class="project-container">
+                    <a class="project-title external-link" href="https://www.fieldstoncalculator.com">Fieldston Calculator</a>
+                    <p class="section-text">Fieldston Calculator, one of my legacy projects, was my first coding project and the first time I began to explore the aspects of web design. It features a grade calculator with multiple different modes as well as a basic calculator.</p>
                 </div>
             </div>
+            <div id="contact-me">
+                <h2 class="section-title">Contact Me</h2>
+                <div class="contact-links" style="margin: 0 0 10px 0;">
+                    <img id="email-icon" src="email_icon.png" width="20" height="20" alt="An email symbol." style="margin: 0 2px;pointer-events: none;">
+                    <a href="mailto:ben@benfink.nyc" class="external-link">ben@benfink.nyc</a>
+                    <img src="copy_icon.png" width="20" height="20" alt="A copy icon." class="copy-contact-info" onclick="toClipboard('ben@benfink.nyc');">
+                </div>
+                <div class="contact-links">
+                    <img id="phone-icon" src="phone_icon.png" width="20" height="20" alt="A phone symbol." style="margin: 0 2px;pointer-events: none;">
+                    <a href="tel:+16468078585" class="external-link">+1 (646) 807-8585</a>
+                    <img src="copy_icon.png" width="20" height="20" alt="A copy icon." class="copy-contact-info" onclick="toClipboard('+16468078585');">
+                </div>
+                <div id="contact-form-container">
+                    <h3>Send Me A Message</h3>
+                    <form id="contact-form" action="https://formspree.io/f/mjkgnydj" method="POST">
+                        <label for="contact-name" style="display: none;">Name</label>
+                        <input id="contact-name" type="text" class="form-input" name="name" placeholder="Name"><br>
+                        <label for="contact-email" style="display: none;">Email</label>
+                        <input id="contact-email" type="text" class="form-input" name="email" placeholder="Email"><br>
+                        <label for="contact-subject" style="display: none;">Subject</label>
+                        <input id="contact-subject" type="text" class="form-input" name="subject" placeholder="Subject"><br>
+                        <label for="contact-message" style="display: none;">Message</label>
+                        <textarea class="form-input" id="contact-message" name="message" placeholder="Type your message here..."></textarea><br>
+                        <div id="contact-form-actions">
+                            <button class="contact-buttons" type="reset" onclick="clearForm();">Clear</button>
+                            <button class="contact-buttons" type="submit">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="social-links">
+                <a class="social-link" href="https://www.instagram.com/benfink_"><img id="sl1" src="instagram_logo.png" width="39.01" height="38.9" alt="Instagram logo." style="pointer-events: none;"></a>
+                <a class="social-link" href="https://www.linkedin.com/in/ben-fink9"><img id="sl2" src="linkedin_logo.png" width="42" height="38.9" alt="LinkedIn logo." style="pointer-events: none;"></a>
+                <a class="social-link" href="https://github.com/bhf901"><img id="sl3" src="github_logo.png" width="38.9" height="38.9" alt="GitHub logo." style="pointer-events: none;"></a>
+            </div>
+            <div id="link-security-container">
+                <div class="shadow-background"></div>
+                <div id="link-security">
+                    <h3 class="section-title" id="link-security-heading">Warning: External Link</h3>
+                    <p>The link you selected–<span id="link-in-text"></span>–connects to a website controlled by an organization not affiliated with BenFink.nyc.</p>
+                    <div id="link-information">
+                        <p style="word-wrap: break-word;">Link: <span id="full-link"></span></p>
+                        <p>Status: <span id="link-security-status"></span></p>
+                    </div>
+                    <div id="link-action">
+                        <button onclick="closeLinkSecurity()">Cancel</button>
+                        <button onclick="openFocusedLink()" style="margin: 0;">Continue</button>
+                    </div>
+                </div>
+            </div>
+            <div id="external-processing-container">
+                <div class="shadow-background"></div>
+                <div id="external-processing">
+                    <h3 class="section-title">Warning</h3>
+                    <p>To secure your information, the data you provided in this form will be processed by Formspree.</p>
+                    <p>If you do not want your information to be processed externally, click "Deny."</p>
+                    <div id="processing-action">
+                        <button onclick="document.getElementById('external-processing-container').style.display = 'none';">Deny</button>
+                        <button onclick="document.getElementById('external-processing-container').style.display = 'none';clearAndSubmitContact();" style="margin: 0;">Allow</button>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu">
+                <div class="header-link-container">
+                    <button class="mobile-header-link" onclick="setTimeout(() => {switchSection('main-titles');}, 1100);">Home</button>
+                </div>
+                <div class="header-link-container">
+                    <button class="mobile-header-link" onclick="setTimeout(() => {switchSection('about-me');}, 1100);">About</button>
+                </div>
+                <div class="header-link-container">
+                    <button class="mobile-header-link" onclick="setTimeout(() => {switchSection('my-projects');}, 1100);">My Projects</button>
+                </div>
+                <div class="header-link-container">
+                    <button class="mobile-header-link" onclick="setTimeout(() => {switchSection('contact-me');}, 1100);">Contact Me</button>
+                </div>
+                <p id="mobile-dismiss-notice"><i>Tap anywhere to dismiss</i></p>
+            </div>
         </div>
-        <div id="mobile-menu">
-            <div class="header-link-container">
-                <button class="mobile-header-link" onclick="setTimeout(() => {switchSection('main-titles');}, 1100);">Home</button>
-            </div>
-            <div class="header-link-container">
-                <button class="mobile-header-link" onclick="setTimeout(() => {switchSection('about-me');}, 1100);">About</button>
-            </div>
-            <div class="header-link-container">
-                <button class="mobile-header-link" onclick="setTimeout(() => {switchSection('my-projects');}, 1100);">My Projects</button>
-            </div>
-            <div class="header-link-container">
-                <button class="mobile-header-link" onclick="setTimeout(() => {switchSection('contact-me');}, 1100);">Contact Me</button>
-            </div>
-            <p id="mobile-dismiss-notice"><i>Tap anywhere to dismiss</i></p>
-        </div>
+        <noscript style="text-align: center;">
+            <h1>JavaScript is disabled.</h1>
+            <p>BenFink.nyc requires JavaScript to function properly. Please enable JavaScript in your browser settings.</p>
+        </noscript>
         <script src="app.js"></script>
     </body>
 </html>
