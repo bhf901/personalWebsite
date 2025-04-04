@@ -284,17 +284,60 @@ document.getElementById('contact-form').addEventListener('submit', (e) => {
         }
     });
     if (approved.length === 4) {
+        document.getElementById('form-status-container').style.display = 'flex';
+        document.getElementById('contact-related-message').textContent = 'Please wait while we attempt to submit your response.'
         requestSubmit();
     }
 });
 
-function requestSubmit() {
-    document.getElementById('external-processing-container').style.display = 'block';
+const contactMessage = {
+    'addError': (msg) => {
+        document.getElementById('contact-related-message').style.color = 'red';
+        document.getElementById('contact-related-message').textContent = msg;
+        setTimeout(() => {
+            document.getElementById('contact-related-message').textContent = '';
+        }, 2000);
+    },
+    'addMessage': (msg) => {
+        if (darkModeStatus) {
+            document.getElementById('contact-related-message').style.color = 'black';
+        } else {
+            document.getElementById('contact-related-message').style.color = 'white';
+        }
+        document.getElementById('contact-related-message').textContent = msg;
+        setTimeout(() => {
+            document.getElementById('contact-related-message').textContent = '';
+        }, 2000);
+    }
 }
 
-function clearAndSubmitContact() {
-    document.getElementById('contact-form').submit();
-    document.getElementById('contact-form').reset();
+async function requestSubmit() {
+    try {
+        const formData = new FormData(document.getElementById('contact-form'));
+        const response = await fetch('https://script.google.com/macros/s/AKfycbyYw9CM-_KCoIXYIaYVaB6qgCHz4em0DEh7EF8JmE1dWq4d6C-vKaxw-W9eNjutzQkbAg/exec', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.ok) {
+            document.getElementById('contact-form').reset();
+            document.getElementById('loading-circle').style.display = 'none';
+            contactMessage.addMessage('Your response was submitted successfully.');
+            setTimeout(() => {
+                document.getElementById('form-status-container').style.display = 'none';
+                document.getElementById('loading-circle').style.display = 'block';
+            }, 2000);
+        }
+    } catch (err) {
+        console.error('Error with contact form submission. ', err.status, err.message);
+        document.getElementById('loading-circle').style.display = 'none';
+        contactMessage.addError(`We encountered an error, please try again later. (Error Code: ${err.status})`);
+        setTimeout(() => {
+            document.getElementById('form-status-container').style.display = 'none';
+            document.getElementById('loading-circle').style.display = 'block';
+        }, 2000);
+    }
+
 }
 
 function clearForm() {

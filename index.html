@@ -101,7 +101,7 @@
                 </div>
                 <div id="contact-form-container">
                     <h3>Send Me A Message</h3>
-                    <form id="contact-form" action="https://formspree.io/f/mjkgnydj" method="POST">
+                    <form id="contact-form">
                         <label for="contact-name" style="display: none;">Name</label>
                         <input id="contact-name" type="text" class="form-input" name="name" placeholder="Name"><br>
                         <label for="contact-email" style="display: none;">Email</label>
@@ -115,6 +115,10 @@
                             <button class="contact-buttons" type="submit">Send</button>
                         </div>
                     </form>
+                    <div id="form-status-container">
+                        <div id="loading-circle"></div>
+                        <p id="contact-related-message" style="margin: 10px 0 0 0;"></p>
+                    </div>
                 </div>
             </div>
             <div id="social-links">
