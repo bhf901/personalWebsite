@@ -221,6 +221,7 @@ function darkMode(status) {
         document.querySelectorAll('.form-input').forEach((input) => {
             input.style.borderColor = 'white';
         });
+        document.getElementById('theme-color').content = '#00000EFF';
         darkModeStatus = false;
     } else if (status === false) {
         document.getElementById('style').href = 'style.css';
@@ -238,6 +239,7 @@ function darkMode(status) {
         document.querySelectorAll('.form-input').forEach((input) => {
             input.style.borderColor = 'black';
         });
+        document.getElementById('theme-color').content = '#F4F6FEFF';
         darkModeStatus = true;
     }
 }
