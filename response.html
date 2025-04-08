@@ -28,7 +28,7 @@
     <body>
         <div style="margin: 50px 0;text-align: center;">
             <h1 id="main-heading">Hello, <span id="name-in-heading"></span>.</h1>
-            <h4>You submitted the Contact form on BenFink.nyc at <span id="time"></span>.</h4>
+            <h4>You submitted the Contact form on BenFink.nyc on <span id="time"></span>.</h4>
             <p>
                 <b>Your submission.</b>
                 <br>
@@ -74,7 +74,7 @@
                     'November',
                     'December'
                 ]
-                const time = `${days[day]}, ${months[month]} ${date}, ${year}`;
+                const time = `${days[day]}, ${months[month]} ${date}, ${year} at ${t.getHours()}:${t.getMinutes()}`;
                 const userName = params.get('name');
                 const parsedUserName = userName.split(' ');
                 const email = params.get('email');
