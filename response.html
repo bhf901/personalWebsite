@@ -45,7 +45,8 @@
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const params = new URLSearchParams(window.location.search);
-                const ms = params.get('time');
+                let ms = params.get('time');
+                ms = parseInt(ms);
                 const t = new Date(ms);
                 const day = t.getDay();
                 const date = t.getDate();
