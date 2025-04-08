@@ -75,12 +75,16 @@
                     'November',
                     'December'
                 ]
-                const time = `${days[day]}, ${months[month]} ${date}, ${year} at ${t.getHours()}:${t.getMinutes()}`;
+                const time = `${days[day]}, ${months[month]} ${date}, ${year} at ${formatTime(t.getHours(), t.getMinutes(), t.getSeconds())}`;
                 const userName = params.get('name');
                 const parsedUserName = userName.split(' ');
                 const email = params.get('email');
                 const subject = params.get('subject');
                 const message = params.get('message');
+
+                if (!userName || !email || !subject || !message) {
+                    window.location.href = 'https://www.benfink.nyc';
+                }
 
                 document.getElementById('name-in-heading').textContent = parsedUserName[0];
                 document.getElementById('time').textContent = time;
@@ -89,6 +93,18 @@
                 document.getElementById('subject').textContent = subject;
                 document.getElementById('message').textContent = message;
             });
+
+            function formatTime(h, m, s) {
+                if (0 < h < 12) {
+                    return `${h}:${m}:${s} AM`;
+                } else if (h > 12) {
+                    return `${h - 12}:${m}:${s} PM`;
+                } else if (h === 12) {
+                    return `${h}:${m}:${s} PM`;
+                } else if (h === 0) {
+                    return `${h + 12}:${m}:${s} AM`;
+                }
+            }
         </script>
     </body>
 </html>
