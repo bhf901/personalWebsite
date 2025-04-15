@@ -142,6 +142,14 @@ function switchSection(current) {
     currentSection = current;
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const page = params.get('p');
+    if (page && sections.indexOf(page) !== -1) {
+        switchSection(page);
+    }
+});
+
 function timeToDate() {
     const time = document.getElementById('current-time');
     time.style.opacity = '0';
