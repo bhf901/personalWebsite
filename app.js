@@ -124,13 +124,17 @@ function switchSection(current) {
                 }
             }
         }
-
         if (current === 'main-titles') {
             home = true;
         } else {
             home = false;
         }
     });
+    const url = new URL(window.location.href);
+    const params = new URLSearchParams(url.search);
+    params.set('p', current);
+    const newURL = `${url.pathname}?${params.toString()}`;
+    history.replaceState(null, '', newURL);
     setTimeout(() => {
         document.getElementById(current).style.display = 'block';
         setTimeout(() => {
